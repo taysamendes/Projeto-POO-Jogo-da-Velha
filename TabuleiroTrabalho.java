@@ -98,12 +98,13 @@ public class TabuleiroTrabalho  {
                             labels[indicex][indicey].setBackground(Color.GREEN);
                             labels[indicex][indicey].setText("O");
                         }
+                        jogo.terminou(numeroJogador,indicex,indicey);
                      
-                    //  if(jogo.terminou())
-                    //      label.setText(jogo.getResultado());
+                  //   if(jogo.terminou(numeroJogador,indicex,indicey))
+                     //     label.setText(jogo.getResultado("O jogador '' venceu."));
                              
                              
-                        System.out.println("clicou na celula:"+  indicex + "-" + indicey);
+                        //System.out.println("clicou na celula:"+  indicex + "-" + indicey);
                         label.setText("jogador:"+numeroJogador);
                         boolean jogadavalida = jogo.jogarJogador(numeroJogador, indicex, indicey);
                          
