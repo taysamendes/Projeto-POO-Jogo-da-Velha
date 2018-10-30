@@ -9,7 +9,10 @@ import javax.swing.border.LineBorder;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
  
 /**
  * IFPB - TSI - POO 
@@ -75,6 +78,7 @@ public class TabuleiroTrabalho  {
         });
         button.setBounds(10, 364, 89, 23);
         frame.getContentPane().add(button);
+        
  
         //inicializar a matriz de labels
         for(int i=0; i < 3; i++){
@@ -92,9 +96,10 @@ public class TabuleiroTrabalho  {
                         int indicey = b.getY()/40;
                         if(numeroJogador==1) {
                             labels[indicex][indicey].setBackground(Color.BLUE);
-                        	labels[indicex][indicey].setText("X");;
+                        	labels[indicex][indicey].setText("X");                      	
+                        	
                         }
-                        else {
+                        else if(numeroJogador==2) {
                             labels[indicex][indicey].setBackground(Color.GREEN);
                             labels[indicex][indicey].setText("O");
                         }
@@ -105,7 +110,14 @@ public class TabuleiroTrabalho  {
                              
                              
                         //System.out.println("clicou na celula:"+  indicex + "-" + indicey);
-                        label.setText("jogador:"+numeroJogador);
+                        /*txtJogador1.addKeyListener(new java.awt.event.KeyAdapter(){
+                        	public void keyPressed(java.awt.event.KeyEvent evt) {
+                        		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                        		label.setText("jogador:"+txtJogador1);
+                        		}
+                        	}
+                        });*/
+                         label.setText("jogador:"+numeroJogador);
                         boolean jogadavalida = jogo.jogarJogador(numeroJogador, indicex, indicey);
                          
                         if(numeroJogador==1)

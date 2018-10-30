@@ -34,51 +34,49 @@ public class JogoDaVelha {
 	}
 
 	public int terminou(int numj, int lin, int col) {
-		//int[] novo = {};
-		ArrayList<Integer> valoresLinha = new ArrayList<Integer>();
-		ArrayList<Integer> valoresColuna = new ArrayList<Integer>();
-// CRIAR MATRIZ PRE-DEFINIDA E COMPARAR		int[][] teste = {{0,0},{1,0},{2,0}};
+		// CRIAR MATRIZ PRE-DEFINIDA E COMPARAR		int[][] teste = {{0,0},{1,0},{2,0}};
 
 		//VERIFICAR JOGADAS DO JOGADOR 1
 		if(numj==1) {
-			valoresLinha.add(lin);
-			valoresColuna.add(col);
-			
-				for(int l: valoresLinha) {
-					for(int c: valoresColuna) {
-						System.out.printf("linha = %d",l);
-						System.out.printf("coluna = %d\n",c);
-							if(((l==0 && c==0)&&(l==1 && c==0)&&(l==2 && c==0))) {
-								System.out.println("linha 1 ok");
-						}
-					}
-				}
-			
-
+			System.out.println("Jogador 1:");
+			getUltimaLinha(lin);
+			getUltimaColuna(col);
+		}
+		else if(numj==2) {
+			System.out.println("Jogador 2:");
+			getUltimaLinha(lin);
+			getUltimaColuna(col);	
 		}
 		return 0;
 
 	}
 
 	public int getUltimaLinha(int lin) {
-		System.out.println(lin);
+		ArrayList<Integer> valoresLinha = new ArrayList<Integer>();
+		valoresLinha.add(lin);
+
+		for(int l: valoresLinha){
+			System.out.printf("Linha: %d\n",l);
+		}
 		return 0;
 	}
 
-/*	public boolean verificaColuna(int col) {
-		int[][] colunas1= {{0},{0},{0}};
-		int[][] colunas2= {{1},{1},{1}};
-		int[][] colunas3= {{2},{2},{2}};
-
-
+	public boolean getUltimaColuna(int col) {
+ 		ArrayList<Integer> valoresColuna = new ArrayList<Integer>();
+		valoresColuna.add(col);
+		
+		for(int c: valoresColuna) {
+			System.out.printf("Coluna: %d\n",c);
+			System.out.println("--------------------");
+		}
 
 		return true;
 		
-	}*/
+	}
 
 
-	public int getResultado(int lin,int col) {
+//	public int getResultado(int lin,int col) {
 			
 
-	}
+	//}
 }
