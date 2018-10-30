@@ -98,7 +98,7 @@ public class TabuleiroTrabalho  {
                             labels[indicex][indicey].setBackground(Color.BLUE);
                                 labels[indicex][indicey].setText("X");
                                 if(labels[indicex][indicey].isEnabled()) {
-                                    labels[indicex][indicey].disable();                              	
+                                	labels[indicex][indicey].setEnabled(false);
                                 }
                         	
                         }
@@ -106,8 +106,9 @@ public class TabuleiroTrabalho  {
                             labels[indicex][indicey].setBackground(Color.GREEN);
                                 labels[indicex][indicey].setText("O");
                                 if(labels[indicex][indicey].isEnabled()) {
-                                    labels[indicex][indicey].disable();                                	
+                                	labels[indicex][indicey].setEnabled(false);
                                 }
+                                
                         }
                         jogo.terminou(numeroJogador,indicex,indicey);
                      
