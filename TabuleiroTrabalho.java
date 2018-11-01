@@ -99,17 +99,15 @@ public class TabuleiroTrabalho  {
                         	if(labels[indicex][indicey].isEnabled()) {
                             	labels[indicex][indicey].setBackground(Color.BLUE);
                                 labels[indicex][indicey].setText("X");
+                                labels[indicex][indicey].removeMouseListener(this);
                             	labels[indicex][indicey].disable();
-                        	}/*else if(labels[indicex][indicey].isEnabled()){
-                        		labels[indicex][indicey].setBackground(Color.GREEN);
-                                labels[indicex][indicey].setText("O");
-                            	labels[indicex][indicey].disable();
-                        	}*/
+                        	}
                          }                              
                        else if(numeroJogador==2) {
                         	if(labels[indicex][indicey].isEnabled()) {
                             	labels[indicex][indicey].setBackground(Color.GREEN);
                                 labels[indicex][indicey].setText("O");
+                                labels[indicex][indicey].removeMouseListener(this);
                             	labels[indicex][indicey].disable();                       		
                         	}
                         }
