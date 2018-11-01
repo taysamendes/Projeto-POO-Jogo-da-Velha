@@ -32,20 +32,35 @@ public class JogoDaVelha {
 	public boolean jogarJogador(int numj, int lin, int col) {
 		return false;
 	}
+	
+	public boolean verificaPosicao(int numj, int lin, int col) {
+		if(matriz[lin][col] ==null)
+			return true;
+		return false;
+	}
 
 	public int terminou(int numj, int lin, int col) {
 		// CRIAR MATRIZ PRE-DEFINIDA E COMPARAR		int[][] teste = {{0,0},{1,0},{2,0}};
 
 		//VERIFICAR JOGADAS DO JOGADOR 1
 		if(numj==1) {
-			System.out.println("Jogador 1:");
-			getUltimaLinha(lin);
-			getUltimaColuna(col);
+			if(matriz[lin][col]==null) {
+				System.out.println("Campo já marcado");
+			} else {
+				System.out.println("Jogador 1:");
+				getUltimaLinha(lin);
+				getUltimaColuna(col);		
+			}
 		}
 		else if(numj==2) {
-			System.out.println("Jogador 2:");
-			getUltimaLinha(lin);
-			getUltimaColuna(col);	
+			if(matriz[lin][col] ==null) {
+				System.out.println("Campo já marcado");
+			} else {
+				System.out.println("Jogador 2:");
+				getUltimaLinha(lin);
+				getUltimaColuna(col);		
+			}
+
 		}
 		return 0;
 

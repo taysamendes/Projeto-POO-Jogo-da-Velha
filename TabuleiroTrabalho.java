@@ -86,7 +86,7 @@ public class TabuleiroTrabalho  {
                 labels[i][j]=new JLabel(i+","+j);
                 frame.getContentPane().add(labels[i][j]);
                 labels[i][j].setBounds(i*40, j*40, 40, 40); //x,y, width, height - 40x40
-                labels[i][j].setBackground(Color.YELLOW);
+                labels[i][j].setBackground(Color.PINK);
                 labels[i][j].setBorder(new LineBorder(new Color(0, 0, 0)));
                 labels[i][j].setOpaque(true);
                 labels[i][j].addMouseListener(new  MouseAdapter(){
@@ -95,21 +95,26 @@ public class TabuleiroTrabalho  {
                         int indicex = b.getX()/40;
                         int indicey = b.getY()/40;
                         if(numeroJogador==1) {
-                            labels[indicex][indicey].setBackground(Color.BLUE);
+                            //if(jogo.verificaPosicao(numeroJogador,indicex,indicey)) {
+                        	if(labels[indicex][indicey].isEnabled()) {
+                            	labels[indicex][indicey].setBackground(Color.BLUE);
                                 labels[indicex][indicey].setText("X");
-                                if(labels[indicex][indicey].isEnabled()) {
-                                	labels[indicex][indicey].setEnabled(false);
-                                }
-                        	
-                        }
-                        else if(numeroJogador==2) {
-                            labels[indicex][indicey].setBackground(Color.GREEN);
+                            	labels[indicex][indicey].disable();
+                        	}/*else if(labels[indicex][indicey].isEnabled()){
+                        		labels[indicex][indicey].setBackground(Color.GREEN);
                                 labels[indicex][indicey].setText("O");
-                                if(labels[indicex][indicey].isEnabled()) {
-                                	labels[indicex][indicey].setEnabled(false);
-                                }
-                                
+                            	labels[indicex][indicey].disable();
+                        	}*/
+                         }                              
+                       else if(numeroJogador==2) {
+                        	if(labels[indicex][indicey].isEnabled()) {
+                            	labels[indicex][indicey].setBackground(Color.GREEN);
+                                labels[indicex][indicey].setText("O");
+                            	labels[indicex][indicey].disable();                       		
+                        	}
                         }
+
+               
                         jogo.terminou(numeroJogador,indicex,indicey);
                      
                   //   if(jogo.terminou(numeroJogador,indicex,indicey))
