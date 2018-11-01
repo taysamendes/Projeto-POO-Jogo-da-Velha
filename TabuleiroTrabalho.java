@@ -83,7 +83,7 @@ public class TabuleiroTrabalho  {
         //inicializar a matriz de labels
         for(int i=0; i < 3; i++){
             for(int j=0; j < 3; j++){
-                labels[i][j]=new JLabel(i+","+j);
+                labels[i][j]=new JLabel("");
                 frame.getContentPane().add(labels[i][j]);
                 labels[i][j].setBounds(i*40, j*40, 40, 40); //x,y, width, height - 40x40
                 labels[i][j].setBackground(Color.PINK);
@@ -95,7 +95,6 @@ public class TabuleiroTrabalho  {
                         int indicex = b.getX()/40;
                         int indicey = b.getY()/40;
                         if(numeroJogador==1) {
-                            //if(jogo.verificaPosicao(numeroJogador,indicex,indicey)) {
                         	if(labels[indicex][indicey].isEnabled()) {
                             	labels[indicex][indicey].setBackground(Color.BLUE);
                                 labels[indicex][indicey].setText("X");

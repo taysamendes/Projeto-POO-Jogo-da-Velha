@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.ArrayList;
 
 public class JogoDaVelha {
@@ -33,35 +34,12 @@ public class JogoDaVelha {
 		return false;
 	}
 	
-	public boolean verificaPosicao(int numj, int lin, int col) {
-		if(matriz[lin][col] ==null)
-			return true;
-		return false;
-	}
 
 	public int terminou(int numj, int lin, int col) {
 		// CRIAR MATRIZ PRE-DEFINIDA E COMPARAR		int[][] teste = {{0,0},{1,0},{2,0}};
 
 		//VERIFICAR JOGADAS DO JOGADOR 1
-		if(numj==1) {
-			if(matriz[lin][col]==null) {
-				System.out.println("Campo já marcado");
-			} else {
-				System.out.println("Jogador 1:");
-				getUltimaLinha(lin);
-				getUltimaColuna(col);		
-			}
-		}
-		else if(numj==2) {
-			if(matriz[lin][col] ==null) {
-				System.out.println("Campo já marcado");
-			} else {
-				System.out.println("Jogador 2:");
-				getUltimaLinha(lin);
-				getUltimaColuna(col);		
-			}
 
-		}
 		return 0;
 
 	}
