@@ -63,7 +63,7 @@ public class TabuleiroTrabalho  {
         frame.getContentPane().setLayout(null);
          
         label = new JLabel("Jogador:");
-        label.setBounds(23, 332, 105, 14);
+        label.setBounds(23, 332, 160, 14);
         frame.getContentPane().add(label);
          
         button = new JButton("reiniciar");
@@ -96,10 +96,12 @@ public class TabuleiroTrabalho  {
                         int indicey = b.getY()/40;
                         if(numeroJogador==1) {
                         	if(labels[indicex][indicey].isEnabled()) {
-                            	labels[indicex][indicey].setBackground(Color.BLUE);
+                            	labels[indicex][indicey].setBackground(Color.WHITE);
                                 labels[indicex][indicey].setText("X");
                                 labels[indicex][indicey].removeMouseListener(this);
                             	labels[indicex][indicey].disable();
+                                label.setText("Vez:jogador 2");
+
                         	}
                          }                              
                        else if(numeroJogador==2) {
@@ -107,7 +109,9 @@ public class TabuleiroTrabalho  {
                             	labels[indicex][indicey].setBackground(Color.GREEN);
                                 labels[indicex][indicey].setText("O");
                                 labels[indicex][indicey].removeMouseListener(this);
-                            	labels[indicex][indicey].disable();                       		
+                            	labels[indicex][indicey].disable();
+                                label.setText("Vez: jogador 1");
+
                         	}
                         }
 
@@ -119,14 +123,8 @@ public class TabuleiroTrabalho  {
                              
                              
                         //System.out.println("clicou na celula:"+  indicex + "-" + indicey);
-                        /*txtJogador1.addKeyListener(new java.awt.event.KeyAdapter(){
-                        	public void keyPressed(java.awt.event.KeyEvent evt) {
-                        		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                        		label.setText("jogador:"+txtJogador1);
-                        		}
-                        	}
-                        });*/
-                         label.setText("jogador:"+numeroJogador);
+
+                        //label.setText("jogador(a):"+numeroJogador);
                         boolean jogadavalida = jogo.jogarJogador(numeroJogador, indicex, indicey);
                          
                         if(numeroJogador==1)
