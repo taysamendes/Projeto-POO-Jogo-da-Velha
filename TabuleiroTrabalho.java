@@ -63,8 +63,10 @@ public class TabuleiroTrabalho  {
         frame.getContentPane().setLayout(null);
          
         label = new JLabel("Jogador:");
-        label.setBounds(23, 332, 160, 14);
+        label.setBounds(113, 326, 160, 14);
         frame.getContentPane().add(label);
+        label.setText("Aguardando jogada...");
+
          
         button = new JButton("reiniciar");
         button.addActionListener(new ActionListener() {
@@ -84,7 +86,11 @@ public class TabuleiroTrabalho  {
         	   }
                        
            });
+<<<<<<< HEAD
+        button.setBounds(149, 352, 129, 25);
+=======
         button.setBounds(10, 364, 89, 23);
+>>>>>>> 24012f2faf3ce5b94537e4b6767dc96f8df14785
         frame.getContentPane().add(button);
         
  
@@ -102,6 +108,8 @@ public class TabuleiroTrabalho  {
                         JLabel b = (JLabel)e.getSource();
                         int indicex = b.getX()/40;
                         int indicey = b.getY()/40;
+                        
+
                         if(numeroJogador==1) {
                         	if(labels[indicex][indicey].isEnabled()) {
                             	labels[indicex][indicey].setBackground(Color.WHITE);
@@ -122,7 +130,7 @@ public class TabuleiroTrabalho  {
 
                         	}
                         }
-
+                       
                
                         jogo.terminou(numeroJogador,indicex,indicey);
                      
