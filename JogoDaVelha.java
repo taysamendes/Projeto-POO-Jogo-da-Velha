@@ -39,7 +39,9 @@ public class JogoDaVelha {
 		// CRIAR MATRIZ PRE-DEFINIDA E COMPARAR		int[][] teste = {{0,0},{1,0},{2,0}};
 
 		//VERIFICAR JOGADAS DO JOGADOR 1
-
+		System.out.println("Jogador: "+numj);
+		getUltimaLinha(lin);
+		getUltimaColuna(col);
 		return 0;
 
 	}
