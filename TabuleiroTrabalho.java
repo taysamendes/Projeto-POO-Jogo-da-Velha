@@ -63,20 +63,30 @@ public class TabuleiroTrabalho  {
         frame.getContentPane().setLayout(null);
          
         label = new JLabel("Jogador:");
-        label.setBounds(23, 332, 160, 14);
+        label.setBounds(113, 326, 160, 14);
         frame.getContentPane().add(label);
+        label.setText("Aguardando jogada...");
+
          
         button = new JButton("reiniciar");
         button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                jogo = new JogoDaVelha("xx","xxx");
-                numeroJogador=1;
-                for(int i=0; i < 3; i++)
-                    for(int j=0; j < 3; j++)
-                        labels[i][j].setBackground(Color.YELLOW);
-            }
-        });
-        button.setBounds(10, 364, 89, 23);
+        	   public void actionPerformed(ActionEvent arg0) {
+                   jogo = new JogoDaVelha("xx","xxx");
+                   numeroJogador=1;
+                   for(int i=0; i < 3; i++) {
+                	   for(int j=0; j < 3; j++) {
+                		   labels[i][j]=new JLabel("");
+                           frame.getContentPane().add(labels[i][j]);
+                           labels[i][j].setBounds(i*40, j*40, 40, 40); //x,y, width, height - 40x40
+                           labels[i][j].setBackground(Color.PINK);
+                           labels[i][j].setBorder(new LineBorder(new Color(0, 0, 0)));
+                           labels[i][j].setOpaque(true);
+                       }
+                   }
+        	   }
+                       
+           });
+        button.setBounds(149, 352, 129, 25);
         frame.getContentPane().add(button);
         
  
@@ -94,6 +104,8 @@ public class TabuleiroTrabalho  {
                         JLabel b = (JLabel)e.getSource();
                         int indicex = b.getX()/40;
                         int indicey = b.getY()/40;
+                        
+
                         if(numeroJogador==1) {
                         	if(labels[indicex][indicey].isEnabled()) {
                             	labels[indicex][indicey].setBackground(Color.WHITE);
@@ -114,7 +126,7 @@ public class TabuleiroTrabalho  {
 
                         	}
                         }
-
+                       
                
                         jogo.terminou(numeroJogador,indicex,indicey);
                      
