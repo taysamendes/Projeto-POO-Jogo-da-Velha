@@ -33,13 +33,12 @@ public class JogoDaVelha {
 	public boolean jogarJogador(int numj, int lin, int col) {
 		return false;
 	}
-	
 
 	public int terminou(int numj, int lin, int col) {
-		// CRIAR MATRIZ PRE-DEFINIDA E COMPARAR		int[][] teste = {{0,0},{1,0},{2,0}};
+		// CRIAR MATRIZ PRE-DEFINIDA E COMPARAR int[][] teste = {{0,0},{1,0},{2,0}};
 
-		//VERIFICAR JOGADAS DO JOGADOR 1
-		System.out.println("Jogador: "+numj);
+		// VERIFICAR JOGADAS DO JOGADOR 1
+		System.out.println("Jogador: " + numj);
 		getUltimaLinha(lin);
 		getUltimaColuna(col);
 		return 0;
@@ -50,27 +49,25 @@ public class JogoDaVelha {
 		ArrayList<Integer> valoresLinha = new ArrayList<Integer>();
 		valoresLinha.add(lin);
 
-		for(int l: valoresLinha){
-			System.out.printf("Linha: %d\n",l);
+		for (int l : valoresLinha) {
+			System.out.printf("Linha: %d\n", l);
 		}
 		return 0;
 	}
 
 	public boolean getUltimaColuna(int col) {
- 		ArrayList<Integer> valoresColuna = new ArrayList<Integer>();
+		ArrayList<Integer> valoresColuna = new ArrayList<Integer>();
 		valoresColuna.add(col);
-		
-		for(int c: valoresColuna) {
-			System.out.printf("Coluna: %d\n",c);
+
+		for (int c : valoresColuna) {
+			System.out.printf("Coluna: %d\n", c);
 			System.out.println("--------------------");
 		}
 
 		return true;
 	}
 
-
 //	public int getResultado(int lin,int col) {
-			
 
-	//}
+	// }
 }
