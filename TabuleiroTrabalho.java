@@ -73,16 +73,25 @@ public class TabuleiroTrabalho  {
         	   public void actionPerformed(ActionEvent arg0) {
                    jogo = new JogoDaVelha("xx","xxx");
                    numeroJogador=1;
-                   for(int i=0; i < 3; i++) {
+                   System.out.println("Limpar jogadas");
+                   
+                   /*for(int i=0; i < 3; i++) {
                 	   for(int j=0; j < 3; j++) {
-                		   labels[i][j]=new JLabel("");
-                           frame.getContentPane().add(labels[i][j]);
+                           
                            labels[i][j].setBounds(i*40, j*40, 40, 40); //x,y, width, height - 40x40
                            labels[i][j].setBackground(Color.PINK);
                            labels[i][j].setBorder(new LineBorder(new Color(0, 0, 0)));
                            labels[i][j].setOpaque(true);
+                           labels[i][j].setText("");
+                           labels[i][j].setEnabled(true);
+
+                           
+                           //labels[i][j].setEnabled(true);
+
+                           
+                                                 
                        }
-                   }
+                   }*/
         	   }
                        
            });
