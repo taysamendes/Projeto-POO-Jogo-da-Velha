@@ -71,10 +71,11 @@ public class TabuleiroTrabalho {
 		button = new JButton("reiniciar");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				jogo = new JogoDaVelha("xx", "xxx");
-				TabuleiroTrabalho t1 = new TabuleiroTrabalho();
-				t1.frame.setVisible(true);
-				
+				TabuleiroTrabalho NovoTabuleiro = new TabuleiroTrabalho();
+				NovoTabuleiro.frame.setVisible(true);
+
 				numeroJogador = 1;
 				System.out.println("Limpar jogadas");
 
