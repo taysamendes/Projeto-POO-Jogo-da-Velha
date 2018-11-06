@@ -64,7 +64,7 @@ public class TabuleiroTrabalho {
 		frame.getContentPane().setLayout(null);
 
 		label = new JLabel("Jogador:");
-		label.setBounds(113, 326, 160, 14);
+		label.setBounds(113, 326, 160, 39);
 		frame.getContentPane().add(label);
 		label.setText("Aguardando jogada...");
 
@@ -82,7 +82,7 @@ public class TabuleiroTrabalho {
 			}
 
 		});
-		button.setBounds(149, 352, 129, 25);
+		button.setBounds(144, 377, 129, 25);
 		frame.getContentPane().add(button);
 
 		// inicializar a matriz de labels
