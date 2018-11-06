@@ -75,7 +75,7 @@ public class TabuleiroTrabalho  {
                    numeroJogador=1;
                    System.out.println("Limpar jogadas");
                    
-                   /*for(int i=0; i < 3; i++) {
+                   for(int i=0; i < 3; i++) {
                 	   for(int j=0; j < 3; j++) {
                            
                            labels[i][j].setBounds(i*40, j*40, 40, 40); //x,y, width, height - 40x40
@@ -91,7 +91,7 @@ public class TabuleiroTrabalho  {
                            
                                                  
                        }
-                   }*/
+                   }
         	   }
                        
            });
