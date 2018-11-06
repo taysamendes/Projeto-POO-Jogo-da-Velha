@@ -86,11 +86,7 @@ public class TabuleiroTrabalho  {
         	   }
                        
            });
-<<<<<<< HEAD
         button.setBounds(149, 352, 129, 25);
-=======
-        button.setBounds(10, 364, 89, 23);
->>>>>>> 24012f2faf3ce5b94537e4b6767dc96f8df14785
         frame.getContentPane().add(button);
         
  
