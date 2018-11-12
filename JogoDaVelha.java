@@ -1,6 +1,6 @@
 /**
  * IFPB - TSI
- * @authors Mayara Gomes Pereira & Taysa Samara Mendes Pinheiro
+ * @author Mayara Gomes Pereira & Taysa Samara Mendes Pinheiro
  *
  */
 
@@ -190,7 +190,7 @@ public class JogoDaVelha {
 			arq.close();
 
 		}catch(IOException e){
-			System.out.println("erro de gravação");
+			System.out.println("erro de gravaÃ§Ã£o");
 			System.exit(0);
 		}
 	}
