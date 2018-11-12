@@ -1,5 +1,12 @@
-package jdv;
+/**
+ * IFPB - TSI
+ * @authors Mayara Gomes Pereira & Taysa Samara Mendes Pinheiro
+ *
+ */
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class JogoDaVelha {
@@ -7,7 +14,7 @@ public class JogoDaVelha {
 	private String nome2;
 	private int[][] matriz = new int[3][3];
 	private int contjogada;
-	private String historico;
+	private String historico ="";
 	private int resultado;
 	private int linha;
 	private int coluna;
@@ -17,19 +24,11 @@ public class JogoDaVelha {
 	public JogoDaVelha(String nome1, String nome2) {
 		this.nome1 = nome1;
 		this.nome2 = nome2;
-		historico += "jogadores:" + nome1 + " contra " + nome2;
+		historico += "jogadores:" + nome1 + " contra " + nome2+"\n";
 		for (int i = 0; i < 3; i++)
 			for (int j = 0; j < 3; j++)
 				matriz[i][j] = 0;
-//		try {
-//		FileWriter arq = new FileWriter( new File("jogodavelha.txt") ); 
-//		}
-//		catch(IOException e)  {
-//            System.out.println("erro de gravação");
-//            System.exit(0);
-//		}
 	}
-	
 
 	public JogoDaVelha(String nome1) {
 		this.nome1 = nome1;
@@ -38,14 +37,14 @@ public class JogoDaVelha {
 		for (int i = 0; i < 3; i++)
 			for (int j = 0; j < 3; j++)
 				matriz[i][j] = 0;
-
-		//Math.random()*100;
 	}
 
-	// VERIFICA SE O JOGADOR ESCOLHEU UMA POSIÇÃO VÁLIDA E LIVRE NO TABULEIRO
 	public boolean jogarJogador(int numj, int lin, int col) {
 
 		if (numj == 1) {
+			historico+=">>>> O jogador: "+numj+" jogou na posicao linha: "+lin+" e na coluna: "+col+"\n";
+			System.out.println(historico);
+
 			numJogador = 1;
 			if (matriz[lin-1][col-1] == 0) {
 				matriz[lin-1][col-1] = 1;
@@ -77,6 +76,9 @@ public class JogoDaVelha {
 		} 
 
 		if (numj == 2) {
+			historico+=">>>> O jogador: "+numj+" jogou na posicao linha: "+lin+" e na coluna: "+col+"\n";
+			System.out.println(historico);
+
 			numJogador = 2;
 			if (matriz[lin-1][col-1] == 0) {
 				matriz[lin-1][col-1] = -1;
@@ -114,6 +116,7 @@ public class JogoDaVelha {
 
 		if(contjogada == 9) {
 			resultado = 3;
+			gravarTxt(historico);
 			return true;
 		}
 		for(int i=0; i<3; i++){
@@ -122,6 +125,7 @@ public class JogoDaVelha {
 					matriz[0][0] + matriz[1][1] + matriz[2][2] == 3 ||
 					matriz[0][2] + matriz[1][1] + matriz[2][0] == 3) {
 				resultado = 1;
+				gravarTxt(historico);
 				return true;
 			}
 
@@ -130,6 +134,7 @@ public class JogoDaVelha {
 					matriz[0][0] + matriz[1][1] + matriz[2][2] == -3 ||
 					matriz[0][2] + matriz[1][1] + matriz[2][0] == -3) {
 				resultado = 2;
+				gravarTxt(historico);
 				return true;
 			}
 		}
@@ -166,11 +171,27 @@ public class JogoDaVelha {
 
 	public void jogarMaquina() {
 		Random maquina = new Random();
-		
-		int linha = maquina.nextInt(3);
-		int coluna = maquina.nextInt(3);
-		
-		jogarJogador(2, linha+1, coluna+1);
+
+
+		int linha;
+		int coluna;
+
+		do {
+			linha = maquina.nextInt(3);
+			coluna = maquina.nextInt(3);
+		}while(!jogarJogador(2,linha+1,coluna+1));
 	}
-	
+
+	public void gravarTxt(String historico) {
+		try {
+			FileWriter arq = new FileWriter( new File("jogodavelha.txt") ); 
+
+			arq.write(historico);
+			arq.close();
+
+		}catch(IOException e){
+			System.out.println("erro de gravação");
+			System.exit(0);
+		}
+	}
 }

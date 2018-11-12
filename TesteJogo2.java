@@ -1,7 +1,5 @@
-package jdv;
-
 import java.util.Scanner;
-
+ 
 public class TesteJogo2 {
  
     public static void main(String[] args) {
@@ -10,7 +8,7 @@ public class TesteJogo2 {
         JogoDaVelha jogo = new JogoDaVelha("joao");
         int linha, coluna;
         boolean jogadavalida;
-        int numeroJogador=1; 
+        int numeroJogador=1;
         do {
          
             do {
@@ -19,7 +17,6 @@ public class TesteJogo2 {
                 linha = teclado.nextInt();
                 System.out.println("digite a coluna");
                 coluna = teclado.nextInt();
-                teclado.nextLine();
                 jogadavalida = jogo.jogarJogador(numeroJogador, linha, coluna);
                 if(jogadavalida){
                     linha = jogo.getUltimaLinha();
@@ -45,7 +42,7 @@ public class TesteJogo2 {
         case 2: System.out.println(jogo.getNomeJogador(2) + "venceu"); break;
         case 3: System.out.println("ninguem venceu");
         }
-         
+         teclado.close();
         //  gravar no arquivo jogo.txt  o histórico do jogo até o resultado
  
     }
