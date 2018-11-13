@@ -46,8 +46,8 @@ public class JogoDaVelha {
 			System.out.println(historico);
 
 			numJogador = 1;
-			if (matriz[lin-1][col-1] == 0) {
-				matriz[lin-1][col-1] = 1;
+			if (matriz[lin][col] == 0) {
+				matriz[lin][col] = 1;
 				linha = lin;
 				coluna = col;
 				for(int i=0; i<3; i++){
@@ -80,8 +80,8 @@ public class JogoDaVelha {
 			System.out.println(historico);
 
 			numJogador = 2;
-			if (matriz[lin-1][col-1] == 0) {
-				matriz[lin-1][col-1] = -1;
+			if (matriz[lin][col] == 0) {
+				matriz[lin][col] = -1;
 				linha = lin;
 				coluna = col;
 				for(int i=0 ; i<3 ; i++){
@@ -114,11 +114,11 @@ public class JogoDaVelha {
 	public boolean terminou() {
 		++contjogada;
 
-		if(contjogada == 9) {
-			resultado = 3;
-			gravarTxt(historico);
-			return true;
-		}
+//		if(contjogada == 9) {
+//			resultado = 3;
+//			gravarTxt(historico);
+//			return true;
+//		}
 		for(int i=0; i<3; i++){
 			if(matriz[i][0] + matriz[i][1] + matriz[i][2] == 3 ||
 					matriz[0][i] + matriz[1][i] + matriz[2][i] == 3 ||

@@ -69,21 +69,25 @@ public class TabuleiroTrabalho  {
             public void actionPerformed(ActionEvent arg0) {
                 jogo = new JogoDaVelha("xx","xxx");
                 numeroJogador=1;
-                for(int i=0; i < 3; i++)
-                    for(int j=0; j < 3; j++)
+                for(int i=1; i < 4; i++)
+                    for(int j=1; j < 4; j++)
                         labels[i][j].setBackground(Color.YELLOW);
             }
         });
         button.setBounds(10, 364, 89, 23);
         frame.getContentPane().add(button);
+        
+        JLabel lblResultado = new JLabel("Resultado:");
+        lblResultado.setBounds(115, 289, 176, 23);
+        frame.getContentPane().add(lblResultado);
  
         //inicializar a matriz de labels
         for(int i=0; i < 3; i++){
             for(int j=0; j < 3; j++){
-                labels[i][j]=new JLabel(i+","+j);
+                labels[i][j]=new JLabel(i+" "+j);
                 frame.getContentPane().add(labels[i][j]);
                 labels[i][j].setBounds(i*40, j*40, 40, 40); //x,y, width, height - 40x40
-                labels[i][j].setBackground(Color.YELLOW);
+                labels[i][j].setBackground(Color.PINK);
                 labels[i][j].setBorder(new LineBorder(new Color(0, 0, 0)));
                 labels[i][j].setOpaque(true);
                 labels[i][j].addMouseListener(new  MouseAdapter(){
@@ -91,18 +95,29 @@ public class TabuleiroTrabalho  {
                         JLabel b = (JLabel)e.getSource();
                         int indicex = b.getX()/40;
                         int indicey = b.getY()/40;
-                        if(numeroJogador==1)
+                        if(numeroJogador==1) {
                             labels[indicex][indicey].setBackground(Color.BLUE);
-                        else
+                            labels[indicex][indicey].setText("X");
+                            labels[indicex][indicey].removeMouseListener(this);
+                        	labels[indicex][indicey].disable();
+                        }
+                        else {
                             labels[indicex][indicey].setBackground(Color.GREEN);
+                            labels[indicex][indicey].setText("O");
+                            labels[indicex][indicey].removeMouseListener(this);
+                        	labels[indicex][indicey].disable();
+                        }
                      
-                    //  if(jogo.terminou())
-                    //      label.setText(jogo.getResultado());
+                        if(jogo.terminou()) {
+                            lblResultado.setText("O jogador "+jogo.getResultado()+" venceu!");
+                            
+                            System.out.println("O jogador "+jogo.getResultado()+" venceu!");
+                        }
                              
                              
-                        System.out.println("clicou na celula:"+  indicex + "-" + indicey);
+                        System.out.println("clicou na celula:"+  indicey + "-" + indicex);
                         label.setText("jogador:"+numeroJogador);
-                        boolean jogadavalida = jogo.jogarJogador(numeroJogador, indicex, indicey);
+                        boolean jogadavalida = jogo.jogarJogador(numeroJogador, indicey, indicex);
                          
                         if(numeroJogador==1) 
                             numeroJogador=2; 

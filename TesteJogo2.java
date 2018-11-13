@@ -43,7 +43,7 @@ public class TesteJogo2 {
         case 3: System.out.println("ninguem venceu");
         }
          teclado.close();
-        //  gravar no arquivo jogo.txt  o histórico do jogo até o resultado
+        //  gravar no arquivo jogo.txt  o histï¿½rico do jogo atï¿½ o resultado
  
     }
 }
